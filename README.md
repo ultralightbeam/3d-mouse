@@ -1,4 +1,4 @@
-*Gesture Box Project*
+# Gesture Box Project
 
 E
 
