@@ -7,3 +7,5 @@ Build a simple human input device based on 3-axis accelerometer (MPU6050) gestur
 - Simple Arduino + MPU6050 HW for algo prototyping
 - Keras based model for circle, linear action classification
 - A live debug plotter for 3-axis accel with classification result
+
+![Sample](photo.jpg)
