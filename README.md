@@ -1,4 +1,4 @@
-# In-air wheel interface
+# Wheel-recognizing glove
 
 Build a simple human input device based on 3-axis accelerometer (MPU6050) gesture recognition on a glove form factor to intelligently interface with machines without touch and just in-air.
 
