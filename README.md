@@ -8,7 +8,7 @@ Build a simple human input device based on 3-axis accelerometer (MPU6050) gestur
 - Keras based model for circle, linear action classification
 - A live debug plotter for 3-axis accel with classification result
 
-![Sample](photo.png){:height="50%" width="50%"}
+<img src="photo.png" alt="drawing" width="200"/>
 
 A sample live demo is shown below.
 
