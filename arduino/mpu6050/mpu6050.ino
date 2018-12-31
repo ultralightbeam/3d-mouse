@@ -1,12 +1,14 @@
 
 #include <Wire.h>
 
-const int MPU6050_addr = 0x68;
-int16_t AccX,AccY,AccZ;
+const int request_from = 0x68;
+const int request_from_int = 14;
+
+int16_t accel_x, accel_y, accel_z;
 
 void setup(){
   Wire.begin();
-  Wire.beginTransmission(MPU6050_addr);
+  Wire.beginTransmission(request_from);
   Wire.write(0x6B);
   Wire.write(0);
   Wire.endTransmission(true);
@@ -14,20 +16,20 @@ void setup(){
 }
 
 void loop(){
-  Wire.beginTransmission(MPU6050_addr);
+  Wire.beginTransmission(request_from);
   Wire.write(0x3B);
   Wire.endTransmission(false);
-  Wire.requestFrom(MPU6050_addr,14, true);
-  AccX = Wire.read() << 8 | Wire.read();
-  AccY = Wire.read() << 8 | Wire.read();
-  AccZ = Wire.read() << 8 | Wire.read();
-  // comma separation for print.
+  Wire.requestFrom(request_from, request_from_int, true);
+  accel_x = Wire.read() << 8 | Wire.read();
+  accel_y = Wire.read() << 8 | Wire.read();
+  accel_z = Wire.read() << 8 | Wire.read();
+  // Comma separation for print.
   Serial.print("AccX = ");
-  Serial.print(AccX);
+  Serial.print(accel_x);
   Serial.print(", AccY = ");
-  Serial.print(AccY);
+  Serial.print(accel_y);
   Serial.print(", AccZ = ");
-  Serial.print(AccZ);
+  Serial.print(accel_z);
   Serial.print('\n');
   delay(60);
 }

@@ -9,3 +9,7 @@ Build a simple human input device based on 3-axis accelerometer (MPU6050) gestur
 - A live debug plotter for 3-axis accel with classification result
 
 ![Sample](photo.png)
+
+A sample live demo is shown below.
+
+![](ref/output.gif)

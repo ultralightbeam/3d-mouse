@@ -12,6 +12,9 @@
 	Display rate is lower than stream rate and lagging aggregates 
 		- need to put check condition until stream hits most recent value
 
+	Usage:
+		$ python main.py /dev/tty.X
+
 """
 
 import numpy as np
@@ -25,12 +28,16 @@ from sklearn.neural_network import MLPClassifier
 
 IS_DEBUG = 0 # mode for debug plot and print
 IS_PRINT_FS = 0
-IS_PRINT_STREAM = 0 # mode for printing stream val
+IS_PRINT_STREAM = 0 # mode for printing stream val for training
+IS_OUTPUT_BAR = 1 # mode for outputting sample volue
 
 N_BUFFER_DISPLAY = 100 # size of buffer for autogain display
 N_BUFFER_COMPUTE = 20 # size of buffer for classifier compute
 
 N_DISPLAY_HEIGHT = 500 # size of image height for display
+
+N_BUFFER_DECISION = 5
+
 
 # fixed parameters.
 BAUDRATE = 9600
@@ -71,11 +78,13 @@ def main(argv):
 	ser = serial.Serial(path_device)
 	ser.baudrate = BAUDRATE
 	M_buffer_display = np.zeros((N_DIM, N_BUFFER_DISPLAY)) + 10**-12 # epsilon for autogain conditioning.
-
+	v_buffer_decision = np.zeros(N_BUFFER_DECISION)
 	counter_frame = 0
 	time_prev = -1
 	time_now = -1
 	frame_rate = -1
+
+	N_OUTPUT_BAR = 30
 
 	dict_model = np.load('model.npy').item()
 	clf = dict_model['clf']
@@ -117,7 +126,28 @@ def main(argv):
 		
 		feat_vec = extract_features(M_buffer_compute.T.copy()).reshape(1, -1)
 		class_predict = clf.predict(feat_vec)[0]
-		print(class_predict)
+
+		v_buffer_decision[:-1] = v_buffer_decision[1:]
+		v_buffer_decision[-1] = class_predict
+		class_predict_fin = np.median(v_buffer_decision)
+
+		if IS_DEBUG:
+			if class_predict_fin == 0:
+				print(' ')
+			elif class_predict_fin == 1:
+				print('clockwise')
+			elif class_predict_fin == 2:
+				print('anticlockwise')
+
+		if IS_OUTPUT_BAR:
+			if class_predict_fin == 1:
+				N_OUTPUT_BAR += 1
+			elif class_predict_fin == 2:
+				N_OUTPUT_BAR -= 1
+			print('\n' * 10)
+			print(' O ' * N_OUTPUT_BAR)
+
+                        
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
