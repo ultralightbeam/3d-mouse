@@ -23,5 +23,5 @@ A sample live demo of the working system is shown below.
 
 ## Project timeline
 
-~~Phase 1: complete serial gestures demo~~
+~~Phase 1: complete serial gestures demo~~\n
 Phase 2: complete battery-powered, local-comm demo tied to proper MacBook UX (e.g. monitor brightness)
