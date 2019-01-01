@@ -1,8 +1,14 @@
 # Wheel-recognizing glove
 
-Build a simple human input device based on 3-axis accelerometer (MPU6050) gesture recognition on a glove form factor to intelligently interface with machines without touch and just in-air.
+## Overview
 
-We draw inspiration from one of the greatest interface technology of our generation - the iPod wheel used for volume control, menu scrolling, etc. Our glove will give an extra spin to recognize human wheel gestures over the air.
+Here, we build a simple human action input device based on 3-axis accelerometer (MPU6050) gesture recognition on a glove form factor to intelligently interface with machines without explicit touch and just in-air.
+
+We draw inspiration from one of the greatest interface technology of our generation - the iPod wheel used for volume control, menu scrolling, etc. 
+
+<img src="ref/wheel.png" alt="drawing" width="500"/>
+
+Our glove gives an extra spin to the wheel gestures by recognizing it over the air - thus opening up more convenient user scenarios (e.g. remote volume control of your smart speaker from couch).
 
 <img src="ref/photo.png" alt="drawing" width="500"/>
 
@@ -13,3 +19,8 @@ The MPU6050 sensor talks to an Ardunio Uno which sends 3-axis accelerometer valu
 A sample live demo of the working system is shown below.
 
 ![](ref/output.gif)
+
+## Project timeline
+
+~~Phase 1: complete serial gestures demo~~
+Phase 2: complete battery-powered, local-comm demo tied to proper MacBook UX (e.g. monitor brightness)
