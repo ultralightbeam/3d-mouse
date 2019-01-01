@@ -6,7 +6,8 @@ Here, we build a simple human action input device based on 3-axis accelerometer 
 
 We draw inspiration from one of the greatest interface technology of our generation - the iPod wheel used for volume control, menu scrolling, etc. 
 
-<img src="ref/wheel.png" alt="drawing" width="500"/>
+<img src="ref/wheel.png" alt="drawing" width="200"/>
+(The iPod wheel that we all used.)
 
 Our glove gives an extra spin to the wheel gestures by recognizing it over the air - thus opening up more convenient user scenarios (e.g. remote volume control of your smart speaker from couch).
 
