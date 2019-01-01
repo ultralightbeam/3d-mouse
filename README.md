@@ -4,13 +4,7 @@
 
 Here, we build a simple human action input device based on 3-axis accelerometer (MPU6050) gesture recognition on a glove form factor to intelligently interface with machines without explicit touch and just in-air.
 
-We draw inspiration from one of the greatest interface technology of our generation - the iPod wheel used for volume control, menu scrolling, etc. 
-
-<p align="center">
-<img src="ref/wheel.png" alt="drawing" width="200"/>
-(The iPod wheel that we all used.)
-</p>
-
+We draw inspiration from one of the greatest interface technology of our generation - the iPod wheel used for volume control, menu scrolling, etc.
 Our glove gives an extra spin to the wheel gestures by recognizing it over the air - thus opening up more convenient user scenarios (e.g. remote volume control of your smart speaker from couch).
 
 <img src="ref/photo.png" alt="drawing" width="500"/>
