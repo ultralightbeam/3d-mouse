@@ -6,6 +6,10 @@ We draw inspiration from one of the greatest interface technology of our generat
 
 <img src="ref/photo.png" alt="drawing" width="500"/>
 
-The MPU6050 sensor talks to an Ardunio Uno which sends 3-axis accelerometer values periodically to a host machine. The host runs a simple 1-layer neural network to recognize a left or right wheel intent and gives a user feedback. A sample live demo is shown below.
+The MPU6050 sensor talks to an Ardunio Uno which sends 3-axis accelerometer values periodically to a host machine. The host runs a simple 1-layer neural network to recognize a left or right wheel intent and gives a user feedback. The data flow is summarized below as a diagram.
+
+<img src="ref/data.png" alt="drawing" width="500"/>
+
+A sample live demo of the working system is shown below.
 
 ![](ref/output.gif)
